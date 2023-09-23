@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>🍉客服小鱼</title>
+    <!-- 关闭分享复制链接 -->
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+    <script>
+        document.addEventListener("WeixinJSBridgeReady", function onBridgeReady() {
+            console.log("关闭分享复制链接");
+            WeixinJSBridge.call("hideOptionMenu");
+        });
+    </script>
+    <!-- 限微信打开 -->
+    <script>
+        // 检测是否在微信内打开的函数
+        function isWeChatBrowser() {
+            var userAgent = navigator.userAgent.toLowerCase();
+            return userAgent.indexOf("micromessenger") !== -1;
+        }
+
+        // 页面加载时执行验证
+        window.onload = function () {
+            // 检测是否在微信内打开
+            if (isWeChatBrowser()) {
+                // 在微信内打开，保留当前页面
+            } else {
+                // 不在微信内打开，跳转到自定义页面
+                window.location.href = "https://y8b.cn";
+            }
+        };
+    </script>
+    <style>
+        /* 添加样式以覆盖整个页面 */
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 设置iframe样式 */
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none; /* 移除iframe边框 */
+        }
+
+        /* 创建一个覆盖层，并在其中放置透明图片 */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 92%;
+        }
+
+        .overlay img {
+            width: 100%;
+            height: 92%;
+            opacity: 0; /* 设置透明度，可以根据需要进行调整 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 透明图片覆盖层 -->
+<div class="overlay" id="overlay">
+    <img src="https://ccs-public.oss-cn-hzfinance.aliyuncs.com/pic20230922152921daaeb9cc-b23b-47d3-91d5-e8a69d9fb362.jpg" alt="透明图片" />
+</div>
+
+<!-- 嵌套的iframe -->
+<iframe src="https://yzf.qq.com/xv/web/static/chat/index.html?sign=37ef9b97d621079723119bed1fe9b467b48fce238d83d5f639b9824878bcd29ff8c20283b36db2a5567666dd64cdb14ada853675/" id="myIframe"></iframe>
+
+<script>
+    let overlay = document.getElementById('overlay');
+let iframe = document.getElementById('myIframe');
+let pressTimer;
+let longPressCount = 0;
+
+overlay.addEventListener('touchstart', () => {
+    pressTimer = setTimeout(() => {
+        longPressCount++;
+        if (longPressCount >= 1) {
+            overlay.remove(); // 长按覆盖层3次后，移除覆盖层
+        }
+    }, 1000); // 设置长按时间阈值（这里是1秒）
+});
+
+overlay.addEventListener('touchend', () => {
+    clearTimeout(pressTimer); // 清除长按计时器
+});
+</script>
+
+</body>
+</html>

@@ -1,5 +1,5 @@
 var codeToImage = {
-    "111": "https://pica.zhimg.com/80/v2-aa53ff2bb79faf82148c252012431f91_720w.png",
+"111": "https://pica.zhimg.com/80/v2-aa53ff2bb79faf82148c252012431f91_720w.png",
 "112": "https://pic1.zhimg.com/80/v2-4c34eb8ba697c7f69c4838ebcb0350ea_720w.png",
 "113": "https://picx.zhimg.com/80/v2-1ba8d849f6e8de73c581291c9703124a_720w.png",
 "114": "https://picx.zhimg.com/80/v2-88320046a42ab8c3c847557da308e128_720w.png",

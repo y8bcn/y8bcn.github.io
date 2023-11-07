@@ -25,11 +25,20 @@
 </head>
 <body>
         <div class = "container"  >
-        <iframe src ="https://m.yqktv888.com/"  id="info-frame"  width="100%" height="100%" allowfullscreen allow="camera *;microphone *"
-        style="user-agent: Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Safari/604.1"></iframe
+        <iframe src ="https://m.yqktv888.com/"  id="ios-frame"  width="100%" height="100%""></iframe
             
         </div>
- 
+ <script>
+  // 获取iframe元素
+  const iframe = document.getElementById('ios-iframe');
+  if (iframe) {
+    // 设置iframe的User Agent字符串为iOS设备
+    iframe.contentWindow.navigator.userAgent = 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Safari/604.1';
+    
+    // 重新加载iframe，以应用新的User Agent字符串
+    iframe.contentWindow.location.reload();
+  }
+</script>
 </body>
  
 </html>
